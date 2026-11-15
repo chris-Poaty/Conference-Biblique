@@ -569,6 +569,8 @@ class Component extends DCLogic {
 
     const setPay = v => this.setState(st => ({ f: { ...st.f, pay: v } }));
     const mode = this.props.afterSubmit ?? 'both';
+    // Adresse du script Google qui enregistre les inscriptions dans le Google Sheet
+    const INSCRIPTIONS_URL = 'https://script.google.com/macros/s/AKfycbxZjaZSl9fHBV19uzrzWSkMlGtH6vqS92lQXrxZ0Pn4_xYUymEcJq6IYCuwkcH9QJds/exec';
 
     this.videoRef = this.videoRef || React.createRef();
     return {
@@ -629,6 +631,14 @@ class Component extends DCLogic {
       submit: e => {
         e.preventDefault();
         if (!f.name.trim() || !f.phone.trim() || !f.church.trim() || !f.role) { this.setState({ error: 'Merci de remplir les champs obligatoires (*).' }); return; }
+        // Enregistrement automatique de l'inscription dans le Google Sheet
+        try {
+          fetch(INSCRIPTIONS_URL, {
+            method: 'POST', mode: 'no-cors', keepalive: true,
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({ name: f.name, phone: f.phone, email: f.email, church: f.church, role: f.role, collab: f.collab, people, pay: f.pay === 'mobile' ? 'Mobile money' : 'Sur place', amount })
+          }).catch(() => {});
+        } catch (err) {}
         if (mode !== 'message') window.open(wa(waConfirmMsg), '_blank');
         this.setState({ submitted: true, error: '' });
       },
