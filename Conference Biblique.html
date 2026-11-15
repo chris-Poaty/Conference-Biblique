@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Conférence Biblique à Port-Gentil — 28 novembre 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#f4f6fb;color:#0a1433;font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0a8f45;text-decoration:none}
+a:hover{color:#06123a}
+*{box-sizing:border-box}
+input,select,button,textarea{font-family:inherit}
+@keyframes cbUp{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+@keyframes cbFade{from{opacity:0}to{opacity:1}}
+@keyframes cbSpin{to{transform:rotate(360deg)}}
+@keyframes cbFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes cbPulse{0%{box-shadow:0 0 0 0 rgba(166,240,30,.55)}70%{box-shadow:0 0 0 16px rgba(166,240,30,0)}100%{box-shadow:0 0 0 0 rgba(166,240,30,0)}}
+@keyframes cbMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes cbShine{0%{left:-60%}60%,100%{left:130%}}
+@keyframes cbGlow{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:.9;transform:scale(1.08)}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;overflow-x:hidden">
+
+<!-- NAV -->
+<header style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:center;padding:14px clamp(14px,3vw,32px);transition:background .3s">
+  <nav style="width:100%;max-width:1240px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 16px;border-radius:999px;background:rgba(6,18,58,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.1);box-shadow:0 10px 40px rgba(3,10,40,.25)">
+    <a href="#top" style="display:flex;align-items:center;gap:10px;color:#fff">
+      <img src="assets/logo-jsm.png" alt="Jimmy Swaggart Ministries Gabon" style="height:34px;width:auto;display:block">
+      <span style="display:flex;flex-direction:column;line-height:1.05">
+        <span style="font-family:Outfit;font-weight:800;font-size:15px;letter-spacing:.02em">CONFÉRENCE BIBLIQUE</span>
+        <span style="font-size:11px;color:#a6f01e;letter-spacing:.14em;font-weight:700">PORT-GENTIL · 2026</span>
+      </span>
+    </a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;gap:26px;font-size:14px;font-weight:500">
+        <a href="#theme" style="color:#d9e2ff" style-hover="color:#a6f01e">Thème</a>
+        <a href="#conferencier" style="color:#d9e2ff" style-hover="color:#a6f01e">Conférencier</a>
+        <a href="#programme" style="color:#d9e2ff" style-hover="color:#a6f01e">Programme</a>
+        <a href="#bible" style="color:#d9e2ff" style-hover="color:#a6f01e">Bible d'étude</a>
+        <a href="#lieu" style="color:#d9e2ff" style-hover="color:#a6f01e">Lieu</a>
+        <a href="#faq" style="color:#d9e2ff" style-hover="color:#a6f01e">FAQ</a>
+      </div>
+    </sc-if>
+    <a href="#inscription" style="display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;background:#a6f01e;color:#06123a;font-family:Outfit;font-weight:700;font-size:14px;white-space:nowrap;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-2px);box-shadow:0 10px 24px rgba(166,240,30,.4);color:#06123a">S'inscrire<span style="font-size:16px">→</span></a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="top" data-screen-label="Hero" style="position:relative;overflow:hidden;color:#fff;padding:clamp(120px,14vw,150px) clamp(20px,5vw,64px) 140px;background:radial-gradient(ellipse 60% 70% at 85% 45%, #0aa84f 0%, rgba(10,168,79,0) 60%), radial-gradient(ellipse 80% 90% at 20% 30%, #1240c4 0%, rgba(18,64,196,0) 70%), linear-gradient(160deg,#06123a 0%,#0a2478 55%,#06123a 100%)">
+  <div style="position:absolute;right:-12%;top:8%;width:min(820px,95vw);aspect-ratio:1;border-radius:50%;border:1.5px solid rgba(166,240,30,.35);animation:cbGlow 7s ease-in-out infinite;pointer-events:none"></div>
+  <div style="position:absolute;right:-4%;top:18%;width:min(620px,75vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle, rgba(10,168,79,.45) 0%, rgba(10,168,79,0) 70%);pointer-events:none"></div>
+  <div style="position:absolute;left:-2%;top:23%;font-family:Outfit;font-weight:900;font-size:clamp(120px,22vw,340px);line-height:1;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.07);white-space:nowrap;pointer-events:none;user-select:none">PAROLE</div>
+
+  <div style="position:relative;max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(32px,5vw,64px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <p style="margin:0;font-size:14px;line-height:1.55;color:#c9d4f5;max-width:520px;animation:cbUp .8s .05s both"><strong style="color:#fff">La Fondation Jimmy Swaggart Ministries Gabon</strong>, en collaboration avec la Fédération des Ministres du Culte et la Mission Arche de Noé (Port-Gentil)</p>
+      <div style="animation:cbUp .9s .15s both">
+        <div style="width:56px;height:4px;background:#a6f01e;border-radius:2px;margin-bottom:18px"></div>
+        <h1 style="margin:0;font-family:Outfit;line-height:.88;letter-spacing:-.02em">
+          <span style="display:block;font-weight:500;font-size:clamp(52px,8.4vw,112px);color:#a6f01e">CONFÉRENCE</span>
+          <span style="display:block;font-weight:900;font-size:clamp(60px,9.6vw,128px);color:#fff">BIBLIQUE</span>
+        </h1>
+        <div style="margin-top:12px;font-family:Outfit;font-weight:700;font-size:clamp(18px,2vw,24px);letter-spacing:.06em;color:#a6f01e">À PORT-GENTIL</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;animation:cbUp .9s .28s both">
+        <span style="align-self:flex-start;background:#a6f01e;color:#06123a;font-family:Outfit;font-weight:800;font-size:15px;padding:4px 12px;border-radius:4px;letter-spacing:.04em">THÈME</span>
+        <h2 style="margin:0;font-family:Outfit;font-weight:700;font-size:clamp(26px,3.3vw,42px);line-height:1.08;text-wrap:balance;max-width:620px">Les outils pour un porteur de la Parole aguerri</h2>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px 28px;animation:cbUp .9s .4s both">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(166,240,30,.14);border:1px solid rgba(166,240,30,.4);color:#a6f01e;font-size:18px">◷</span>
+          <span style="display:flex;flex-direction:column"><strong style="font-family:Outfit;font-size:16px">Samedi 28 novembre 2026</strong><span style="font-size:13px;color:#b8c5ee">9h00 – 15h30 · 1 journée</span></span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(166,240,30,.14);border:1px solid rgba(166,240,30,.4);color:#a6f01e;font-size:18px">⌖</span>
+          <span style="display:flex;flex-direction:column"><strong style="font-family:Outfit;font-size:16px">Église Arche de Noé</strong><span style="font-size:13px;color:#b8c5ee">Bac-Aviation, Port-Gentil</span></span>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:6px;animation:cbUp .9s .52s both">
+        <a href="#inscription" style="position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:12px;padding:17px 28px;border-radius:14px;background:#a6f01e;color:#06123a;font-family:Outfit;font-weight:800;font-size:17px;animation:cbPulse 2.4s infinite;transition:transform .2s" style-hover="transform:translateY(-3px);color:#06123a">
+          <span style="position:absolute;top:0;bottom:0;width:40%;background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.6),rgba(255,255,255,0));animation:cbShine 3.2s ease-in-out infinite"></span>
+          <span style="position:relative">Je réserve ma place</span>
+          <span style="position:relative;padding:4px 10px;border-radius:8px;background:#06123a;color:#a6f01e;font-size:14px">10 000 F</span>
+        </a>
+        <a href="{{ waHref }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:16px 22px;border-radius:14px;border:1.5px solid rgba(255,255,255,.3);color:#fff;font-family:Outfit;font-weight:600;font-size:16px;transition:background .2s,border-color .2s" style-hover="background:rgba(255,255,255,.08);border-color:#a6f01e;color:#fff">
+          <span style="width:26px;height:26px;border-radius:50%;background:#25d366;display:grid;place-items:center;font-size:13px;color:#fff">✆</span>Écrire sur WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div style="position:relative;display:flex;justify-content:center;animation:cbFade 1.2s .2s both">
+      <div style="position:relative;width:min(100%,460px)">
+        <div style="position:absolute;inset:-22px;border-radius:260px 260px 40px 40px;border:1.5px dashed rgba(166,240,30,.45)"></div>
+        <div style="position:relative;border-radius:240px 240px 32px 32px;overflow:hidden;aspect-ratio:4/5;background:#1b2340;box-shadow:0 40px 80px rgba(2,8,30,.55)">
+          <img src="assets/andre-moloto.jpeg" alt="Rév. Apôtre André MOLOTO" style="width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,18,58,0) 55%,rgba(6,18,58,.85) 100%)"></div>
+        </div>
+        <div style="position:absolute;left:clamp(-40px,-3vw,-10px);bottom:28px;padding:18px 22px;border-radius:18px;background:rgba(10,14,30,.88);backdrop-filter:blur(10px);border:1px solid rgba(166,240,30,.35);box-shadow:0 20px 50px rgba(0,0,0,.35);animation:cbUp 1s .8s both">
+          <div style="font-family:Outfit;font-weight:800;font-size:13px;letter-spacing:.14em;color:#a6f01e">CONFÉRENCIER</div>
+          <div style="font-style:italic;font-size:18px;color:#e6ecff;margin-top:4px">Rév. Apôtre</div>
+          <div style="font-family:Outfit;font-weight:800;font-size:clamp(24px,2.6vw,30px);line-height:1">André MOLOTO</div>
+          <div style="font-size:13px;color:#9fb0de;margin-top:4px">De Libreville</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <sc-if value="{{ showCountdown }}" hint-placeholder-val="{{ true }}">
+    <div style="position:relative;max-width:760px;margin:72px auto 0;display:grid;grid-template-columns:repeat(4,1fr);border-radius:22px;background:rgba(6,14,44,.72);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);box-shadow:0 24px 60px rgba(2,8,30,.4);animation:cbUp 1s .7s both">
+      <div style="padding:22px 8px;text-align:center"><div style="font-family:Outfit;font-weight:800;font-size:clamp(32px,5vw,52px);line-height:1;color:#fff">{{ cd.d }}</div><div style="margin-top:6px;font-size:12px;letter-spacing:.16em;color:#a6f01e;font-weight:700">JOURS</div></div>
+      <div style="padding:22px 8px;text-align:center;border-left:1px solid rgba(255,255,255,.1)"><div style="font-family:Outfit;font-weight:800;font-size:clamp(32px,5vw,52px);line-height:1;color:#fff">{{ cd.h }}</div><div style="margin-top:6px;font-size:12px;letter-spacing:.16em;color:#a6f01e;font-weight:700">HEURES</div></div>
+      <div style="padding:22px 8px;text-align:center;border-left:1px solid rgba(255,255,255,.1)"><div style="font-family:Outfit;font-weight:800;font-size:clamp(32px,5vw,52px);line-height:1;color:#fff">{{ cd.m }}</div><div style="margin-top:6px;font-size:12px;letter-spacing:.16em;color:#a6f01e;font-weight:700">MINUTES</div></div>
+      <div style="padding:22px 8px;text-align:center;border-left:1px solid rgba(255,255,255,.1)"><div style="font-family:Outfit;font-weight:800;font-size:clamp(32px,5vw,52px);line-height:1;color:#a6f01e">{{ cd.s }}</div><div style="margin-top:6px;font-size:12px;letter-spacing:.16em;color:#a6f01e;font-weight:700">SECONDES</div></div>
+    </div>
+  </sc-if>
+</section>
+
+<!-- MARQUEE -->
+<div style="position:relative;z-index:2;margin-top:-34px;transform:rotate(-1.6deg);background:#a6f01e;color:#06123a;padding:16px 0;overflow:hidden;box-shadow:0 14px 40px rgba(6,18,58,.25)">
+  <div style="display:flex;width:max-content;animation:cbMarquee 32s linear infinite">
+    <sc-for list="{{ marquee }}" as="r" hint-placeholder-count="16">
+      <span style="display:flex;align-items:center;gap:28px;padding-right:28px;font-family:Outfit;font-weight:800;font-size:22px;letter-spacing:.04em;white-space:nowrap">{{ r }}<span style="font-size:14px">✦</span></span>
+    </sc-for>
+  </div>
+</div>
+
+<!-- INFO CARD -->
+<section style="padding:72px clamp(20px,5vw,64px) 0">
+  <div data-reveal="1" style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));background:#fff;border-radius:24px;box-shadow:0 20px 60px rgba(10,20,51,.08);border:1px solid #e3e8f4;overflow:hidden">
+    <div style="padding:28px 30px;display:flex;gap:16px;align-items:flex-start;border-right:1px solid #eef1f8">
+      <span style="flex:none;width:48px;height:48px;border-radius:14px;background:#e8f8ee;color:#0a8f45;display:grid;place-items:center;font-size:22px;font-weight:700">▦</span>
+      <div><div style="font-size:12px;font-weight:700;letter-spacing:.16em;color:#0a8f45">DATE</div><div style="font-family:Outfit;font-weight:700;font-size:22px;margin-top:4px">Samedi 28 novembre 2026</div></div>
+    </div>
+    <div style="padding:28px 30px;display:flex;gap:16px;align-items:flex-start;border-right:1px solid #eef1f8">
+      <span style="flex:none;width:48px;height:48px;border-radius:14px;background:#e8f8ee;color:#0a8f45;display:grid;place-items:center;font-size:22px;font-weight:700">◷</span>
+      <div><div style="font-size:12px;font-weight:700;letter-spacing:.16em;color:#0a8f45">HORAIRE</div><div style="font-family:Outfit;font-weight:700;font-size:22px;margin-top:4px">9h00 – 15h30</div><div style="font-size:14px;color:#4a5578;margin-top:2px">1 journée · pause café</div></div>
+    </div>
+    <div style="padding:28px 30px;display:flex;gap:16px;align-items:flex-start">
+      <span style="flex:none;width:48px;height:48px;border-radius:14px;background:#e8f8ee;color:#0a8f45;display:grid;place-items:center;font-size:22px;font-weight:700">⌖</span>
+      <div><div style="font-size:12px;font-weight:700;letter-spacing:.16em;color:#0a8f45">LIEU</div><div style="font-family:Outfit;font-weight:700;font-size:22px;margin-top:4px">Église Arche de Noé, Bac-Aviation</div><div style="font-size:14px;color:#4a5578;margin-top:2px">Derrière la grande église catholique, 4 porte</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THEME & OBJECTIFS -->
+<section id="theme" data-screen-label="Thème" style="padding:110px clamp(20px,5vw,64px) 40px">
+  <div style="max-width:1240px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end;margin-bottom:48px">
+      <div data-reveal="1">
+        <div style="font-size:13px;font-weight:700;letter-spacing:.18em;color:#0a8f45">THÈME &amp; OBJECTIFS</div>
+        <h2 style="margin:12px 0 0;font-family:Outfit;font-weight:800;font-size:clamp(34px,4.4vw,56px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance">Les outils pour un porteur de la Parole <span style="color:#0a8f45">aguerri</span></h2>
+      </div>
+      <p data-reveal="1" style="margin:0;font-size:18px;line-height:1.6;color:#4a5578;text-wrap:pretty">Une journée d'enseignement pour les ministres de l'Évangile et leurs collaborateurs : étudier les Écritures avec méthode, les transmettre avec fidélité, et repartir équipé des outils concrets du ministère de la Parole.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px">
+      <sc-for list="{{ objectives }}" as="o" hint-placeholder-count="4">
+        <article data-reveal="1" style="position:relative;padding:30px 26px 28px;border-radius:22px;background:#fff;border:1px solid #e3e8f4;transition:transform .3s,box-shadow .3s,border-color .3s;display:flex;flex-direction:column;gap:14px" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(10,20,51,.1);border-color:#a6f01e">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span style="font-family:Outfit;font-weight:800;font-size:44px;line-height:1;color:#06123a">{{ o.n }}</span>
+            <span style="width:12px;height:12px;border-radius:50%;background:#a6f01e"></span>
+          </div>
+          <h3 style="margin:0;font-family:Outfit;font-weight:700;font-size:21px;line-height:1.2">{{ o.t }}</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:#4a5578">{{ o.d }}</p>
+        </article>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- CONFERENCIER -->
+<section id="conferencier" data-screen-label="Conférencier" style="padding:80px clamp(20px,5vw,64px)">
+  <div data-reveal="1" style="max-width:1240px;margin:0 auto;border-radius:32px;overflow:hidden;color:#fff;background:radial-gradient(ellipse 70% 90% at 100% 100%, #0aa84f 0%, rgba(10,168,79,0) 60%),linear-gradient(140deg,#06123a,#0b2c8c);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr))">
+    <div style="position:relative;min-height:440px">
+      <img src="assets/andre-moloto.jpeg" alt="Rév. Apôtre André MOLOTO" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 15%">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,18,58,0) 60%,rgba(6,18,58,.6) 100%)"></div>
+    </div>
+    <div style="padding:clamp(32px,5vw,64px);display:flex;flex-direction:column;justify-content:center;gap:18px">
+      <div style="font-size:13px;font-weight:700;letter-spacing:.18em;color:#a6f01e">LE CONFÉRENCIER</div>
+      <div>
+        <div style="font-style:italic;font-size:22px;color:#d9e2ff">Rév. Apôtre</div>
+        <h2 style="margin:2px 0 0;font-family:Outfit;font-weight:800;font-size:clamp(40px,5vw,64px);line-height:.98;letter-spacing:-.02em">André MOLOTO</h2>
+        <div style="margin-top:10px;font-size:16px;color:#b8c5ee">De Libreville</div>
+      </div>
+      <p style="margin:0;font-size:17px;line-height:1.65;color:#d9e2ff;max-width:520px;text-wrap:pretty">Représentant de la Fondation Jimmy Swaggart Ministries Gabon, il conduira l'ensemble des sessions d'enseignement de la journée autour du thème « Les outils pour un porteur de la Parole aguerri ».</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+        <a href="#programme" style="display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:12px;background:#fff;color:#06123a;font-family:Outfit;font-weight:700;transition:transform .2s" style-hover="transform:translateY(-2px);color:#06123a">Voir le programme →</a>
+        <a href="#inscription" style="display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:12px;border:1.5px solid rgba(255,255,255,.35);color:#fff;font-family:Outfit;font-weight:600;transition:border-color .2s" style-hover="border-color:#a6f01e;color:#a6f01e">S'inscrire</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section id="video" data-screen-label="Vidéo" style="position:relative;padding:40px clamp(20px,5vw,64px) 90px;overflow:hidden">
+  <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:40px 72px;align-items:center">
+    <div data-reveal="1" style="display:flex;flex-direction:column;gap:18px">
+      <div style="font-size:13px;font-weight:700;letter-spacing:.18em;color:#0a8f45">EN VIDÉO</div>
+      <h2 style="margin:0;font-family:Outfit;font-weight:800;font-size:clamp(34px,4.2vw,54px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance">Le message de l'invitation</h2>
+      <p style="margin:0;font-size:17px;line-height:1.65;color:#4a5578;max-width:480px;text-wrap:pretty">Découvrez en quelques instants l'esprit de cette journée et ce qui attend chaque porteur de la Parole le 28 novembre à Port-Gentil.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:6px">
+        <button onClick="{{ toggleVideo }}" style="display:inline-flex;align-items:center;gap:12px;padding:14px 22px 14px 14px;border-radius:999px;border:0;background:#06123a;color:#fff;font-family:Outfit;font-weight:700;font-size:16px;cursor:pointer;transition:transform .2s" style-hover="transform:translateY(-2px)">
+          <span style="width:34px;height:34px;border-radius:50%;background:#a6f01e;color:#06123a;display:grid;place-items:center;font-size:13px">{{ videoIcon }}</span>{{ videoLabel }}
+        </button>
+        <a href="#inscription" style="display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;border:1.5px solid #06123a;color:#06123a;font-family:Outfit;font-weight:700;font-size:16px;transition:background .2s,color .2s" style-hover="background:#a6f01e;border-color:#a6f01e;color:#06123a">Je m'inscris →</a>
+      </div>
+    </div>
+    <div data-reveal="1" style="position:relative;display:flex;justify-content:center">
+      <div style="position:absolute;inset:6% -4% -6% 8%;border-radius:32px;background:linear-gradient(140deg,#0b2c8c,#0aa84f);transform:rotate(3deg)"></div>
+      <div style="position:absolute;top:-18px;left:-6px;width:120px;height:120px;border-radius:50%;border:1.5px dashed #0a8f45;animation:cbSpin 30s linear infinite"></div>
+      <div style="position:relative;width:100%;border-radius:28px;overflow:hidden;background:#040d2c;border:6px solid #06123a;box-shadow:0 40px 80px rgba(6,18,58,.35);display:flex;justify-content:center">
+        <video ref="{{ videoRef }}" src="assets/conference-biblique.mp4" playsInline="{{ true }}" preload="metadata" controls="{{ videoPlaying }}" onPlay="{{ onVideoPlay }}" onPause="{{ onVideoPause }}" onEnded="{{ onVideoPause }}" style="display:block;width:100%;height:auto;max-height:78vh;object-fit:contain;background:#040d2c"></video>
+        <sc-if value="{{ videoIdle }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ toggleVideo }}" aria-label="Lire la vidéo" style="position:absolute;inset:0;border:0;cursor:pointer;background:linear-gradient(180deg,rgba(6,18,58,.1),rgba(6,18,58,.55));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:#fff">
+            <span style="width:92px;height:92px;border-radius:50%;background:#a6f01e;color:#06123a;display:grid;place-items:center;font-size:30px;padding-left:6px;animation:cbPulse 2.4s infinite;transition:transform .25s" style-hover="transform:scale(1.08)">▶</span>
+            <span style="font-family:Outfit;font-weight:700;font-size:15px;letter-spacing:.14em">REGARDER LA VIDÉO</span>
+          </button>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLIC CONVIE -->
+<section data-screen-label="Public" style="padding:40px clamp(20px,5vw,64px) 80px">
+  <div style="max-width:1240px;margin:0 auto;text-align:center">
+    <div data-reveal="1" style="font-size:13px;font-weight:700;letter-spacing:.18em;color:#0a8f45">SONT CONVIÉS</div>
+    <h2 data-reveal="1" style="margin:12px 0 36px;font-family:Outfit;font-weight:800;font-size:clamp(30px,3.6vw,46px);letter-spacing:-.02em">Les cinq ministères &amp; les serviteurs de l'Église</h2>
+    <div data-reveal="1" style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;max-width:960px;margin:0 auto">
+      <sc-for list="{{ roles }}" as="r" hint-placeholder-count="8">
+        <span style="padding:14px 26px;border-radius:999px;border:1.5px solid #0b2c8c;color:#06123a;background:#fff;font-family:Outfit;font-weight:600;font-size:19px;transition:all .25s;cursor:default" style-hover="background:#06123a;color:#a6f01e;transform:translateY(-3px) rotate(-1deg);border-color:#06123a">{{ r }}</span>
+      </sc-for>
+    </div>
+    <div data-reveal="1" style="margin:30px auto 0;display:inline-flex;align-items:center;gap:12px;padding:14px 22px;border-radius:14px;background:#e8f8ee;color:#0a1433;font-size:16px;text-align:left">
+      <strong style="font-family:Outfit;color:#0a8f45">NB</strong>Chaque leader peut être accompagné de 2 à 3 collaborateurs.
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME -->
+<section id="programme" data-screen-label="Programme" style="padding:100px clamp(20px,5vw,64px);background:#eef2fa">
+  <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:48px 72px;align-items:start">
+    <div data-reveal="1" style="display:flex;flex-direction:column;gap:18px">
+      <div style="font-size:13px;font-weight:700;letter-spacing:.18em;color:#0a8f45">PROGRAMME</div>
+      <h2 style="margin:0;font-family:Outfit;font-weight:800;font-size:clamp(34px,4.2vw,54px);line-height:1.02;letter-spacing:-.02em">Une journée intensive</h2>
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#4a5578;max-width:440px">De l'accueil à la remise des certificats, chaque temps est pensé pour apprendre, pratiquer et échanger.</p>
+      <div style="margin-top:8px;display:inline-flex;align-self:flex-start;align-items:center;gap:14px;padding:18px 22px;border-radius:18px;background:#06123a;color:#fff">
+        <span style="font-family:Outfit;font-weight:800;font-size:34px;color:#a6f01e;line-height:1">6h30</span>
+        <span style="font-size:14px;line-height:1.4;color:#c9d4f5">d'enseignement<br>et d'échanges</span>
+      </div>
+      <div style="font-size:13px;color:#6a7596;font-style:italic">Programme indicatif — horaires détaillés susceptibles d'ajustement.</div>
+    </div>
+    <ol style="list-style:none;margin:0;padding:0;position:relative">
+      <div style="position:absolute;left:83px;top:10px;bottom:10px;width:2px;background:linear-gradient(#0a8f45,#1240c4)"></div>
+      <sc-for list="{{ programme }}" as="p" hint-placeholder-count="8">
+        <li data-reveal="1" style="position:relative;display:grid;grid-template-columns:70px 28px 1fr;gap:0 0;align-items:start;padding:14px 0">
+          <span style="font-family:Outfit;font-weight:700;font-size:17px;color:#06123a;padding-top:14px">{{ p.time }}</span>
+          <span style="position:relative;z-index:1;margin:19px 0 0 7px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid #0a8f45"></span>
+          <div style="margin-left:14px;padding:14px 18px;border-radius:14px;background:#fff;border:1px solid #e0e6f3;transition:transform .25s,box-shadow .25s" style-hover="transform:translateX(6px);box-shadow:0 12px 30px rgba(10,20,51,.08)">
+            <div style="font-family:Outfit;font-weight:700;font-size:18px">{{ p.title }}</div>
+            <div style="font-size:14px;color:#4a5578;margin-top:3px">{{ p.desc }}</div>
+          </div>
+        </li>
+      </sc-for>
+    </ol>
+  </div>
+</section>
+
+<!-- BIBLE D'ETUDE -->
+<section id="bible" data-screen-label="Bible d'étude" style="position:relative;padding:110px clamp(20px,5vw,64px);overflow:hidden;background:#fff">
+  <div style="position:absolute;left:50%;top:50%;width:1100px;height:1100px;transform:translate(-50%,-50%);border-radius:50%;border:1px dashed #d6def0;animation:cbSpin 120s linear infinite;pointer-events:none"></div>
+  <div style="position:relative;max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px 72px;align-items:center">
+    <div data-reveal="1" onMouseMove="{{ tilt }}" onMouseLeave="{{ untilt }}" style="position:relative;border-radius:32px;background:radial-gradient(circle at 50% 45%,#ffffff 0%,#e9eefb 70%);aspect-ratio:1;display:grid;place-items:center;perspective:1000px;cursor:pointer">
+      <div style="position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle,rgba(166,240,30,.55),rgba(166,240,30,0) 65%);animation:cbGlow 5s ease-in-out infinite"></div>
+      <div style="position:relative;width:88%;animation:cbFloat 6s ease-in-out infinite">
+        <img data-tilt="1" src="assets/bible-etude.webp" alt="La Bible d'Étude Par Exposition — Jimmy Swaggart" style="width:100%;display:block;mix-blend-mode:multiply;transition:transform .25s ease-out;transform-style:preserve-3d">
+      </div>
+      <div style="position:absolute;top:28px;right:28px;width:118px;height:118px;border-radius:50%;background:#06123a;color:#a6f01e;display:grid;place-items:center;text-align:center;font-family:Outfit;font-weight:800;font-size:15px;line-height:1.1;transform:rotate(10deg);box-shadow:0 14px 30px rgba(6,18,58,.3)">OFFERTE<br>à chaque<br>inscrit</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div data-reveal="1" style="font-size:13px;font-weight:700;letter-spacing:.18em;color:#0a8f45">VOTRE OUTIL DE TRAVAIL</div>
+      <h2 data-reveal="1" style="margin:0;font-family:Outfit;font-weight:800;font-size:clamp(36px,4.4vw,58px);line-height:1;letter-spacing:-.02em">La Bible d'Étude<br><span style="font-style:italic;font-weight:600;color:#0b2c8c">Par Exposition</span></h2>
+      <p data-reveal="1" style="margin:0;font-size:17px;line-height:1.65;color:#4a5578;max-width:540px;text-wrap:pretty">Chaque participant inscrit reçoit, en fin de journée, un exemplaire de la Bible d'étude de Jimmy Swaggart : le texte biblique accompagné de notes d'exposition intégrées, pour étudier et enseigner la Parole avec précision.</p>
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;margin-top:6px">
+        <sc-for list="{{ bibleFeatures }}" as="f" hint-placeholder-count="4">
+          <div style="display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:16px;background:#f4f6fb;border:1px solid #e3e8f4;transition:border-color .25s,background .25s" style-hover="border-color:#0a8f45;background:#fff">
+            <span style="flex:none;width:30px;height:30px;border-radius:9px;background:#06123a;color:#a6f01e;display:grid;place-items:center;font-weight:800;font-size:14px">✓</span>
+            <div><div style="font-family:Outfit;font-weight:700;font-size:17px">{{ f.t }}</div><div style="font-size:14px;color:#4a5578;margin-top:2px">{{ f.d }}</div></div>
+          </div>
+        </sc-for>
+      </div>
+      <div data-reveal="1" style="margin-top:8px;display:flex;align-items:center;gap:18px;padding:20px 22px;border-radius:20px;background:#a6f01e;color:#06123a">
+        <span style="flex:none;width:54px;height:54px;border-radius:50%;background:#06123a;color:#a6f01e;display:grid;place-items:center;font-family:Outfit;font-weight:800;font-size:22px">+</span>
+        <div><div style="font-family:Outfit;font-weight:800;font-size:20px;line-height:1.15">Un certificat de participation</div><div style="font-size:14px;margin-top:3px;color:#1d2a10">remis avec la Bible d'étude à chaque participant inscrit.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUS / PARTICIPATION -->
+<section data-screen-label="Participation" style="padding:100px clamp(20px,5vw,64px);background:linear-gradient(180deg,#eef2fa,#f4f6fb)">
+  <div style="max-width:1100px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:44px">
+      <div data-reveal="1" style="font-size:13px;font-weight:700;letter-spacing:.18em;color:#0a8f45">PARTICIPATION</div>
+      <h2 data-reveal="1" style="margin:12px 0 0;font-family:Outfit;font-weight:800;font-size:clamp(32px,4vw,50px);letter-spacing:-.02em">Tout est compris</h2>
+    </div>
+    <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));border-radius:28px;overflow:hidden;background:#fff;border:2px solid #06123a;box-shadow:0 30px 70px rgba(10,20,51,.12)">
+      <div style="position:relative;padding:44px 40px;background:#06123a;color:#fff;display:flex;flex-direction:column;justify-content:space-between;gap:28px;overflow:hidden">
+        <div style="position:absolute;right:-80px;bottom:-80px;width:260px;height:260px;border-radius:50%;border:1.5px solid rgba(166,240,30,.4)"></div>
+        <div>
+          <div style="font-family:Outfit;font-weight:700;font-size:16px;letter-spacing:.14em;color:#a6f01e">PASS PARTICIPANT</div>
+          <div style="margin-top:14px;font-family:Outfit;font-weight:900;font-size:clamp(60px,7vw,86px);line-height:.9;color:#a6f01e">10 000 F</div>
+          <div style="margin-top:10px;font-size:15px;color:#b8c5ee">FCFA · par participant</div>
+        </div>
+        <a href="#inscription" style="position:relative;display:flex;justify-content:center;align-items:center;gap:10px;padding:17px 24px;border-radius:14px;background:#a6f01e;color:#06123a;font-family:Outfit;font-weight:800;font-size:17px;transition:transform .2s" style-hover="transform:translateY(-2px);color:#06123a">Je m'inscris maintenant →</a>
+      </div>
+      <ul style="list-style:none;margin:0;padding:36px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px 24px;align-content:center">
+        <sc-for list="{{ includes }}" as="i" hint-placeholder-count="6">
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="flex:none;margin-top:2px;width:24px;height:24px;border-radius:50%;background:#e8f8ee;color:#0a8f45;display:grid;place-items:center;font-size:13px;font-weight:800">✓</span>
+            <span><strong style="display:block;font-family:Outfit;font-size:17px">{{ i.t }}</strong><span style="font-size:14px;color:#4a5578">{{ i.d }}</span></span>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ORGANISATEURS -->
+<section data-screen-label="Organisateurs" style="padding:80px clamp(20px,5vw,64px);background:#fff">
+  <div style="max-width:1100px;margin:0 auto;text-align:center">
+    <div data-reveal="1" style="font-size:13px;font-weight:700;letter-spacing:.18em;color:#0a8f45">ORGANISATEURS</div>
+    <h2 data-reveal="1" style="margin:12px 0 40px;font-family:Outfit;font-weight:800;font-size:clamp(28px,3.4vw,42px);letter-spacing:-.02em">Une initiative commune</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px">
+      <sc-for list="{{ organisers }}" as="o" hint-placeholder-count="3">
+        <div data-reveal="1" style="padding:30px 24px;border-radius:22px;border:1px solid #e3e8f4;background:#f9fafd;display:flex;flex-direction:column;align-items:center;gap:16px;transition:transform .3s,box-shadow .3s" style-hover="transform:translateY(-6px);box-shadow:0 20px 44px rgba(10,20,51,.1)">
+          <div style="width:120px;height:120px;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden;box-shadow:0 8px 24px rgba(10,20,51,.08)">
+            <img src="{{ o.logo }}" alt="{{ o.name }}" style="width:86%;height:86%;object-fit:contain">
+          </div>
+          <div style="font-family:Outfit;font-weight:700;font-size:18px;line-height:1.25">{{ o.name }}</div>
+          <div style="font-size:14px;color:#4a5578">{{ o.role }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- LIEU -->
+<section id="lieu" data-screen-label="Lieu" style="padding:100px clamp(20px,5vw,64px);background:#06123a;color:#fff">
+  <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px 64px;align-items:center">
+    <div data-reveal="1" style="display:flex;flex-direction:column;gap:18px">
+      <div style="font-size:13px;font-weight:700;letter-spacing:.18em;color:#a6f01e">LIEU</div>
+      <h2 style="margin:0;font-family:Outfit;font-weight:800;font-size:clamp(34px,4.2vw,54px);line-height:1.02;letter-spacing:-.02em">Église Arche de Noé</h2>
+      <p style="margin:0;font-size:18px;line-height:1.6;color:#c9d4f5">Quartier Bac-Aviation, derrière la grande église catholique, 4 porte — Port-Gentil, Gabon.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:6px">
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Bac-Aviation%2C+Port-Gentil%2C+Gabon" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:12px;background:#a6f01e;color:#06123a;font-family:Outfit;font-weight:700;transition:transform .2s" style-hover="transform:translateY(-2px);color:#06123a">Ouvrir l'itinéraire →</a>
+        <a href="tel:+241062183903" style="display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:12px;border:1.5px solid rgba(255,255,255,.3);color:#fff;font-family:Outfit;font-weight:600" style-hover="border-color:#a6f01e;color:#a6f01e">Appeler : 062 18 39 03</a>
+      </div>
+    </div>
+    <sc-if value="{{ showMap }}" hint-placeholder-val="{{ true }}">
+      <div data-reveal="1" style="border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.15);aspect-ratio:16/11;background:#0b2c8c">
+        <iframe title="Carte — Bac-Aviation, Port-Gentil" src="https://maps.google.com/maps?q=Bac-Aviation%2C%20Port-Gentil%2C%20Gabon&amp;z=15&amp;output=embed" style="width:100%;height:100%;border:0;display:block;filter:saturate(.85)" loading="lazy"></iframe>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<!-- FAQ + INSCRIPTION -->
+<section id="inscription" data-screen-label="Inscription" style="padding:110px clamp(20px,5vw,64px);background:#f4f6fb">
+  <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px 56px;align-items:start">
+
+    <div id="faq" style="display:flex;flex-direction:column;gap:14px">
+      <div data-reveal="1" style="font-size:13px;font-weight:700;letter-spacing:.18em;color:#0a8f45">QUESTIONS FRÉQUENTES</div>
+      <h2 data-reveal="1" style="margin:0 0 14px;font-family:Outfit;font-weight:800;font-size:clamp(30px,3.6vw,46px);letter-spacing:-.02em">Avant de vous inscrire</h2>
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+        <div data-reveal="1" style="border-radius:16px;background:#fff;border:1px solid #e3e8f4;overflow:hidden">
+          <button onClick="{{ f.toggle }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 20px;background:transparent;border:0;cursor:pointer;text-align:left;font-family:Outfit;font-weight:600;font-size:17px;color:#0a1433">
+            <span>{{ f.q }}</span>
+            <span style="flex:none;width:30px;height:30px;border-radius:50%;background:#06123a;color:#a6f01e;display:grid;place-items:center;font-size:18px;line-height:1">{{ f.icon }}</span>
+          </button>
+          <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:0 20px 20px;font-size:15px;line-height:1.65;color:#4a5578;animation:cbUp .35s both">{{ f.a }}</div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+
+    <div data-reveal="1" style="position:sticky;top:100px;border-radius:28px;background:#fff;border:1px solid #e3e8f4;box-shadow:0 30px 80px rgba(10,20,51,.12);overflow:hidden">
+      <div style="padding:28px 32px;background:linear-gradient(130deg,#06123a,#0b2c8c 70%,#0a8f45);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+        <div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:.18em;color:#a6f01e">INSCRIPTION PRÉALABLE</div>
+          <div style="font-family:Outfit;font-weight:800;font-size:28px;margin-top:4px">Réservez votre place</div>
+        </div>
+        <div style="padding:8px 14px;border-radius:12px;background:#a6f01e;color:#06123a;font-family:Outfit;font-weight:800;font-size:20px">10 000 F</div>
+      </div>
+
+      <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submit }}" style="padding:28px 32px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px">
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:#0a1433;grid-column:1/-1">Nom complet *
+            <input name="name" value="{{ f.name }}" onChange="{{ onField }}" placeholder="Ex. Pasteur Jean Mba" required="{{ true }}" style="padding:14px 16px;border-radius:12px;border:1.5px solid #dde3f0;background:#f9fafd;font-size:16px;font-weight:400;color:#0a1433;outline:none" style-focus="border-color:#0a8f45;background:#fff;box-shadow:0 0 0 4px rgba(10,143,69,.12)">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:#0a1433">Téléphone / WhatsApp *
+            <input name="phone" type="tel" value="{{ f.phone }}" onChange="{{ onField }}" placeholder="0XX XX XX XX" required="{{ true }}" style="padding:14px 16px;border-radius:12px;border:1.5px solid #dde3f0;background:#f9fafd;font-size:16px;font-weight:400;color:#0a1433;outline:none" style-focus="border-color:#0a8f45;background:#fff;box-shadow:0 0 0 4px rgba(10,143,69,.12)">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:#0a1433">E-mail
+            <input name="email" type="email" value="{{ f.email }}" onChange="{{ onField }}" placeholder="vous@exemple.com" style="padding:14px 16px;border-radius:12px;border:1.5px solid #dde3f0;background:#f9fafd;font-size:16px;font-weight:400;color:#0a1433;outline:none" style-focus="border-color:#0a8f45;background:#fff;box-shadow:0 0 0 4px rgba(10,143,69,.12)">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:#0a1433;grid-column:1/-1">Église / ministère *
+            <input name="church" value="{{ f.church }}" onChange="{{ onField }}" placeholder="Nom de votre église ou ministère" required="{{ true }}" style="padding:14px 16px;border-radius:12px;border:1.5px solid #dde3f0;background:#f9fafd;font-size:16px;font-weight:400;color:#0a1433;outline:none" style-focus="border-color:#0a8f45;background:#fff;box-shadow:0 0 0 4px rgba(10,143,69,.12)">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:#0a1433">Fonction *
+            <select name="role" value="{{ f.role }}" onChange="{{ onField }}" required="{{ true }}" style="padding:14px 16px;border-radius:12px;border:1.5px solid #dde3f0;background:#f9fafd;font-size:16px;font-weight:400;color:#0a1433;outline:none" style-focus="border-color:#0a8f45">
+              <option value="">Choisir…</option>
+              <sc-for list="{{ roleOptions }}" as="r" hint-placeholder-count="10"><option value="{{ r }}">{{ r }}</option></sc-for>
+            </select>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:#0a1433">Collaborateurs accompagnants
+            <select name="collab" value="{{ f.collab }}" onChange="{{ onField }}" style="padding:14px 16px;border-radius:12px;border:1.5px solid #dde3f0;background:#f9fafd;font-size:16px;font-weight:400;color:#0a1433;outline:none" style-focus="border-color:#0a8f45">
+              <option value="0">Aucun</option>
+              <option value="1">1 collaborateur</option>
+              <option value="2">2 collaborateurs</option>
+              <option value="3">3 collaborateurs</option>
+            </select>
+          </label>
+          <div style="grid-column:1/-1;display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:13px;font-weight:700;color:#0a1433">Mode de paiement</span>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:10px">
+              <sc-for list="{{ payOptions }}" as="p" hint-placeholder-count="2">
+                <button type="button" onClick="{{ p.pick }}" style="text-align:left;padding:14px 16px;border-radius:12px;cursor:pointer;border:{{ p.border }};background:{{ p.bg }};color:#0a1433;transition:all .2s">
+                  <div style="font-family:Outfit;font-weight:700;font-size:16px">{{ p.label }}</div>
+                  <div style="font-size:13px;color:#4a5578;margin-top:2px">{{ p.sub }}</div>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+          <div style="grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;background:#eef2fa">
+            <span style="font-size:14px;color:#4a5578">Total ({{ total.people }} pers.)</span>
+            <strong style="font-family:Outfit;font-size:22px;color:#06123a">{{ total.amount }} F</strong>
+          </div>
+          <sc-if value="{{ error }}" hint-placeholder-val="{{ false }}">
+            <div style="grid-column:1/-1;padding:12px 14px;border-radius:10px;background:#fdecec;color:#a11c1c;font-size:14px">{{ error }}</div>
+          </sc-if>
+          <button type="submit" style="grid-column:1/-1;position:relative;overflow:hidden;padding:18px;border:0;border-radius:14px;background:#a6f01e;color:#06123a;font-family:Outfit;font-weight:800;font-size:18px;cursor:pointer;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-2px);box-shadow:0 14px 30px rgba(166,240,30,.45)">
+            <span style="position:absolute;top:0;bottom:0;width:40%;background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.6),rgba(255,255,255,0));animation:cbShine 3.2s ease-in-out infinite"></span>
+            <span style="position:relative">Valider mon inscription →</span>
+          </button>
+          <div style="grid-column:1/-1;font-size:13px;color:#6a7596;text-align:center">Places limitées · Inscription : 062 18 39 03 / 065 13 56 88</div>
+        </form>
+      </sc-if>
+
+      <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:32px;display:flex;flex-direction:column;gap:18px;animation:cbUp .5s both">
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="flex:none;width:52px;height:52px;border-radius:50%;background:#a6f01e;color:#06123a;display:grid;place-items:center;font-size:24px;font-weight:800">✓</span>
+            <div><div style="font-family:Outfit;font-weight:800;font-size:24px">Merci, {{ f.name }} !</div><div style="font-size:15px;color:#4a5578">Votre pré-inscription est enregistrée.</div></div>
+          </div>
+          <div style="padding:18px 20px;border-radius:16px;background:#f4f6fb;border:1px solid #e3e8f4">
+            <div style="font-size:12px;font-weight:700;letter-spacing:.16em;color:#0a8f45">FINALISER LE PAIEMENT · {{ total.amount }} F</div>
+            <div style="margin-top:12px;display:grid;gap:10px">
+              <div style="display:flex;justify-content:space-between;gap:12px;align-items:center"><span style="font-size:15px">Airtel Money</span><strong style="font-family:Outfit;font-size:19px">074 20 44 70</strong></div>
+              <div style="display:flex;justify-content:space-between;gap:12px;align-items:center"><span style="font-size:15px">Moov Money</span><strong style="font-family:Outfit;font-size:19px">062 28 31 24</strong></div>
+            </div>
+            <div style="margin-top:12px;font-size:13px;color:#4a5578;line-height:1.5">Paiement mobile <strong>avec frais</strong>. Vous pouvez aussi régler sur place le jour de la conférence. Conservez votre reçu.</div>
+          </div>
+          <a href="{{ waConfirm }}" target="_blank" rel="noopener" style="display:flex;justify-content:center;align-items:center;gap:10px;padding:17px;border-radius:14px;background:#25d366;color:#fff;font-family:Outfit;font-weight:800;font-size:17px;transition:transform .2s" style-hover="transform:translateY(-2px);color:#fff">✆ Confirmer sur WhatsApp</a>
+          <button onClick="{{ reset }}" style="padding:12px;border:0;background:transparent;color:#4a5578;font-size:14px;cursor:pointer;text-decoration:underline">Inscrire une autre personne</button>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#040d2c;color:#c9d4f5;padding:64px clamp(20px,5vw,64px) 32px">
+  <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:36px">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;gap:12px;align-items:center">
+        <img src="assets/logo-jsm.png" alt="JSM Gabon" style="height:52px;width:auto">
+        <span style="width:52px;height:52px;border-radius:50%;background:#fff;overflow:hidden;display:grid;place-items:center"><img src="assets/logo-fmcg.jpeg" alt="FMCG" style="width:90%;height:90%;object-fit:contain"></span>
+        <span style="width:52px;height:52px;border-radius:50%;background:#fff;overflow:hidden;display:grid;place-items:center"><img src="assets/logo-arche-de-noe.jpeg" alt="Mission Arche de Noé" style="width:90%;height:90%;object-fit:contain"></span>
+      </div>
+      <div style="font-family:Outfit;font-weight:800;font-size:20px;color:#fff">Conférence Biblique · Port-Gentil</div>
+      <div style="font-size:14px;line-height:1.6">Samedi 28 novembre 2026 · 9h00 – 15h30<br>Église Arche de Noé, Bac-Aviation</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.16em;color:#a6f01e">INSCRIPTION PRÉALABLE</div>
+      <a href="tel:+241062183903" style="font-family:Outfit;font-weight:700;font-size:22px;color:#fff" style-hover="color:#a6f01e">062 18 39 03</a>
+      <a href="tel:+241065135688" style="font-family:Outfit;font-weight:700;font-size:22px;color:#fff" style-hover="color:#a6f01e">065 13 56 88</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.16em;color:#a6f01e">PAIEMENT (AVEC FRAIS)</div>
+      <span style="font-family:Outfit;font-weight:700;font-size:22px;color:#fff">074 20 44 70</span>
+      <span style="font-family:Outfit;font-weight:700;font-size:22px;color:#fff">062 28 31 24</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.16em;color:#a6f01e">PRÊT À VOUS ÉQUIPER ?</div>
+      <a href="#inscription" style="display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:12px;background:#a6f01e;color:#06123a;font-family:Outfit;font-weight:800;transition:transform .2s" style-hover="transform:translateY(-2px);color:#06123a">Je m'inscris →</a>
+    </div>
+  </div>
+  <div style="max-width:1240px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:#8a98c4">© 2026 Fondation Jimmy Swaggart Ministries Gabon · Fédération des Ministres du Culte · Mission Arche de Noé</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showCountdown&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showMap&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;afterSubmit&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;both&quot;,&quot;message&quot;,&quot;whatsapp&quot;],&quot;default&quot;:&quot;both&quot;,&quot;tsType&quot;:&quot;'both'|'message'|'whatsapp'&quot;,&quot;section&quot;:&quot;Formulaire&quot;},&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;241062183903&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Formulaire&quot;}}">
+class Component extends DCLogic {
+  state = { now: Date.now(), wide: true, openFaq: 0, submitted: false, error: '',
+    f: { name: '', phone: '', email: '', church: '', role: '', collab: '0', pay: 'mobile' } };
+
+  componentDidMount() {
+    this.timer = setInterval(() => this.setState({ now: Date.now() }), 1000);
+    this.onResize = () => { const w = window.innerWidth >= 1040; if (w !== this.state.wide) this.setState({ wide: w }); };
+    this.onResize(); window.addEventListener('resize', this.onResize);
+    setTimeout(() => this.setupReveal(), 60);
+  }
+  componentWillUnmount() { clearInterval(this.timer); window.removeEventListener('resize', this.onResize); this.io && this.io.disconnect(); }
+
+  setupReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    this.io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { const el = e.target; el.style.opacity = '1'; el.style.transform = 'none'; this.io.unobserve(el); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    const vh = window.innerHeight;
+    els.forEach(el => {
+      if (el.getBoundingClientRect().top < vh * 0.9) return;
+      const sib = el.parentElement ? Array.from(el.parentElement.children).filter(c => c.hasAttribute('data-reveal')) : [];
+      const i = Math.max(0, sib.indexOf(el));
+      el.style.opacity = '0'; el.style.transform = 'translateY(36px)';
+      el.style.transition = `opacity .8s cubic-bezier(.2,.7,.2,1) ${i * 0.08}s, transform .8s cubic-bezier(.2,.7,.2,1) ${i * 0.08}s`;
+      this.io.observe(el);
+    });
+  }
+
+  num() { return (this.props.whatsappNumber || '241062183903').replace(/\D/g, ''); }
+
+  renderVals() {
+    const s = this.state, f = s.f;
+    const target = new Date('2026-11-28T09:00:00+01:00').getTime();
+    let diff = Math.max(0, Math.floor((target - s.now) / 1000));
+    const p = n => String(n).padStart(2, '0');
+    const cd = { d: p(Math.floor(diff / 86400)), h: p(Math.floor(diff % 86400 / 3600)), m: p(Math.floor(diff % 3600 / 60)), s: p(diff % 60) };
+
+    const roles = ['Apôtres', 'Prophètes', 'Évangélistes', 'Docteurs', 'Pasteurs', 'Missionnaires', 'Anciens', 'Diacres'];
+    const people = 1 + parseInt(f.collab || '0', 10);
+    const amount = (people * 10000).toLocaleString('fr-FR').replace(/\u202f|\u00a0/g, ' ');
+
+    const faqData = [
+      ['Qui peut participer ?', "La conférence s'adresse aux Apôtres, Prophètes, Évangélistes, Docteurs, Pasteurs, Missionnaires, Anciens et Diacres. Chaque leader peut être accompagné de 2 à 3 collaborateurs."],
+      ['Que comprend la participation de 10 000 F ?', "L'accès à toutes les sessions, le badge, le petit-déjeuner, l'eau, le jus et le café, ainsi qu'un certificat et une Bible d'étude remis en fin de journée."],
+      ['Comment payer ?', 'Par mobile money (avec frais) au 074 20 44 70 ou au 062 28 31 24, ou directement sur place le jour de la conférence.'],
+      ["L'inscription préalable est-elle obligatoire ?", "Oui. Elle garantit votre badge, votre certificat et votre Bible d'étude. Inscrivez-vous via le formulaire ou au 062 18 39 03 / 065 13 56 88."],
+      ['Les collaborateurs reçoivent-ils aussi la Bible ?', "Le certificat et la Bible d'étude sont distribués à chaque participant inscrit. Chaque collaborateur doit donc être inscrit individuellement."],
+      ['Où se trouve le lieu ?', "Église Arche de Noé, quartier Bac-Aviation, derrière la grande église catholique, 4 porte, à Port-Gentil."]
+    ];
+
+    const waMsg = `Bonjour, je souhaite m'inscrire à la Conférence Biblique du 28 novembre 2026 à Port-Gentil.`;
+    const waConfirmMsg = `Bonjour, je confirme mon inscription à la Conférence Biblique (Port-Gentil, 28/11/2026).\n\nNom : ${f.name}\nTéléphone : ${f.phone}${f.email ? `\nE-mail : ${f.email}` : ''}\nÉglise / ministère : ${f.church}\nFonction : ${f.role}\nCollaborateurs : ${f.collab}\nPaiement : ${f.pay === 'mobile' ? 'Mobile money' : 'Sur place'}\nTotal : ${amount} F`;
+    const wa = m => `https://wa.me/${this.num()}?text=${encodeURIComponent(m)}`;
+
+    const setPay = v => this.setState(st => ({ f: { ...st.f, pay: v } }));
+    const mode = this.props.afterSubmit ?? 'both';
+
+    this.videoRef = this.videoRef || React.createRef();
+    return {
+      videoRef: this.videoRef, videoPlaying: !!s.vPlaying, videoIdle: !s.vStarted,
+      videoIcon: s.vPlaying ? '❚❚' : '▶', videoLabel: s.vPlaying ? 'Mettre en pause' : 'Lire la vidéo',
+      toggleVideo: () => { const v = this.videoRef.current; if (!v) return; v.paused ? v.play() : v.pause(); },
+      onVideoPlay: () => this.setState({ vPlaying: true, vStarted: true }),
+      onVideoPause: () => this.setState({ vPlaying: false }),
+      wide: s.wide, cd, showCountdown: this.props.showCountdown ?? true, showMap: this.props.showMap ?? true,
+      waHref: wa(waMsg), waConfirm: wa(waConfirmMsg),
+      marquee: [...roles, ...roles].map(r => r.toUpperCase()),
+      roles,
+      roleOptions: ['Apôtre', 'Prophète', 'Évangéliste', 'Docteur', 'Pasteur', 'Missionnaire', 'Ancien', 'Diacre', 'Collaborateur', 'Autre'],
+      objectives: [
+        { n: '01', t: 'Étudier avec méthode', d: 'Lire le texte dans son contexte historique, littéraire et canonique avant d’en tirer un enseignement.' },
+        { n: '02', t: 'Maîtriser les outils', d: 'Exploiter la Bible d’étude, la concordance et les notes d’exposition au service de la préparation.' },
+        { n: '03', t: 'Transmettre avec fidélité', d: 'Structurer un message clair, fidèle au texte et adapté à l’auditoire.' },
+        { n: '04', t: 'Tenir dans la durée', d: 'Affermir le caractère, l’intégrité et la discipline du porteur de la Parole.' }
+      ],
+      programme: [
+        { time: '9h00', title: 'Accueil & badges', desc: 'Enregistrement des participants · petit-déjeuner' },
+        { time: '9h30', title: 'Ouverture', desc: 'Louange, prière et mot des organisateurs' },
+        { time: '10h00', title: 'Enseignement I', desc: 'Rév. Apôtre André MOLOTO' },
+        { time: '11h30', title: 'Pause café', desc: 'Eau, jus et café offerts' },
+        { time: '11h45', title: 'Enseignement II', desc: 'Rév. Apôtre André MOLOTO' },
+        { time: '13h15', title: 'Questions & échanges', desc: 'Temps d’interaction avec le conférencier' },
+        { time: '14h15', title: 'Enseignement III & synthèse', desc: 'Mise en pratique et exhortation' },
+        { time: '15h00', title: 'Remise des certificats', desc: 'Distribution des Bibles d’étude · clôture à 15h30' }
+      ],
+      bibleFeatures: [
+        { t: 'Notes d’exposition', d: 'Commentaires intégrés au texte par Jimmy Swaggart' },
+        { t: 'Louis Segond 1910', d: 'La traduction de référence en français' },
+        { t: 'Concordance incluse', d: 'Pour retrouver et relier les passages' },
+        { t: 'Offerte, non vendue', d: 'Don des Ministères Jimmy Swaggart' }
+      ],
+      includes: [
+        { t: 'Toutes les sessions', d: 'Une journée complète d’enseignement' },
+        { t: 'Badge participant', d: 'Remis à l’accueil' },
+        { t: 'Petit-déjeuner', d: 'Servi à l’arrivée' },
+        { t: 'Eau, jus & café', d: 'Pause café incluse' },
+        { t: 'Certificat', d: 'De participation' },
+        { t: 'Bible d’étude', d: 'Par Exposition, offerte' }
+      ],
+      organisers: [
+        { logo: 'assets/logo-jsm.png', name: 'Fondation Jimmy Swaggart Ministries Gabon', role: 'Organisateur' },
+        { logo: 'assets/logo-fmcg.jpeg', name: 'Fédération des Ministres du Culte', role: 'En collaboration' },
+        { logo: 'assets/logo-arche-de-noe.jpeg', name: 'Mission Arche de Noé', role: 'Église hôte · Port-Gentil' }
+      ],
+      faqs: faqData.map(([q, a], i) => ({ q, a, open: s.openFaq === i, icon: s.openFaq === i ? '−' : '+', toggle: () => this.setState({ openFaq: s.openFaq === i ? -1 : i }) })),
+      payOptions: [
+        { v: 'mobile', label: 'Mobile money', sub: '074 20 44 70 · 062 28 31 24' },
+        { v: 'place', label: 'Sur place', sub: 'Le jour de la conférence' }
+      ].map(o => ({ ...o, pick: () => setPay(o.v), border: f.pay === o.v ? '2px solid #0a8f45' : '1.5px solid #dde3f0', bg: f.pay === o.v ? '#e8f8ee' : '#f9fafd' })),
+      f, total: { people, amount },
+      error: s.error,
+      notSubmitted: !s.submitted, submitted: s.submitted,
+      onField: e => { const { name, value } = e.target; this.setState(st => ({ f: { ...st.f, [name]: value }, error: '' })); },
+      submit: e => {
+        e.preventDefault();
+        if (!f.name.trim() || !f.phone.trim() || !f.church.trim() || !f.role) { this.setState({ error: 'Merci de remplir les champs obligatoires (*).' }); return; }
+        if (mode !== 'message') window.open(wa(waConfirmMsg), '_blank');
+        this.setState({ submitted: true, error: '' });
+      },
+      reset: () => this.setState({ submitted: false, f: { name: '', phone: '', email: '', church: '', role: '', collab: '0', pay: 'mobile' } }),
+      tilt: e => {
+        const r = e.currentTarget.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        const img = e.currentTarget.querySelector('[data-tilt]');
+        if (img) img.style.transform = `rotateY(${x * 18}deg) rotateX(${-y * 14}deg) scale(1.04)`;
+      },
+      untilt: e => { const img = e.currentTarget.querySelector('[data-tilt]'); if (img) img.style.transform = 'none'; }
+    };
+  }
+}
+</script>
+</body>
+</html>
